@@ -3,7 +3,7 @@
  */
 angular.module("app").directive("navBar", function() {
     return {
-        restrict: 'A',
-        templateUrl: '../../partials/nav.html'
+        restrict: 'E',
+        templateUrl: 'partials/nav.html'
     };
 });
