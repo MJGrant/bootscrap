@@ -1,0 +1,23 @@
+{
+  "name": "bootscrap",
+  "version": "1.0.0",
+  "description": "a bootstrap and angular sandbox",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MJGrant/bootscrap.git"
+  },
+  "author": "mjgrant",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MJGrant/bootscrap/issues"
+  },
+  "homepage": "https://github.com/MJGrant/bootscrap",
+  "devDependencies": {
+    "bower": "^1.4.1",
+    "grunt": "^0.4.5"
+  }
+}
