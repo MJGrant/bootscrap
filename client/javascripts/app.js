@@ -1,4 +1,4 @@
-angular.module('app', ['ngRoute'], function($routeProvider) {
+angular.module('bootscrapp', ['ngRoute'], function($routeProvider) {
     "use strict";
 
     $routeProvider.when('/', {

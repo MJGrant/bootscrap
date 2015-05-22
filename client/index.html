@@ -1,5 +1,4 @@
-<!-- import stuff here-->
-<html5 ng-app="app">
+<html5 ng-app="bootscrapp">
     <head>
         <title>Bootscrap</title>
         <meta charset="utf-8" />
@@ -14,7 +13,13 @@
 
         <!-- angular files -->
         <script defer="defer" src="./javascripts/app.js"></script>
+
+        <!-- directives -->
         <script defer="defer" src="./javascripts/directives/navbar.js"></script>
+        <script defer="defer" src="./javascripts/directives/main.js"></script>
+
+
+        <!--controllers -->
         <script defer="defer" src="./javascripts/controllers/indexCtrl.js"></script>
 
         <!-- Latest compiled and minified CSS -->
@@ -26,5 +31,6 @@
 
     <div ng-controller="indexCtrl">
         <nav-bar></nav-bar>
+        <main-page></main-page>
     </div>
 </html5>
