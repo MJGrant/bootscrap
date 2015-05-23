@@ -2,27 +2,26 @@
     <div class="jumbotron">
         <h1>Welcome to Bootscrap!</h1>
         <p>This is Mandi's sandbox for practicing Bootstrap stuff.</p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">This button does nothing, unless you count having a lot of text as doing something.</a></p>
+        <p><a class="btn btn-primary btn-lg btn-responsive" href="#" role="button">This button does nothing except get smaller on narrower screens.</a></p>
     </div>
 
-    <div class="col-sm-6">
-        <h1>Alerts to pop</h1>
-            <div class="row">
-                <div class="alert alert-warning alert-dismissable btn-lg" role="alert">
-                    <button type="button" class="close" data-dismiss="alert">&times;</button>
-                    <strong>Click the X</strong> to summon a <span class="glyphicon glyphicon-lamp"></span> once.</strong>
-                </div>
+    <div class="col-sm-12">
+        <h2>Alerts to pop and stuff</h2>
+        <!-- left column alerts-->
+        <div class="col-sm-6">
+            <div class="alert alert-warning alert-dismissable btn-lg" role="alert">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <strong>Click the X</strong> to summon a <span class="glyphicon glyphicon-lamp"></span> once.</strong>
             </div>
 
-            <div class="row">
-                <div class="alert alert-info alert-dismissable btn-lg" role="alert">
-                    <button type="button" class="close" data-dismiss="alert">&times;</button>
-                    <span class="glyphicon glyphicon-cloud"></span>
-                    <span>Do you want a build a snowman?</span>
-                    <span class="glyphicon glyphicon-flash"></span>
-                </div>
+            <div class="alert alert-info alert-dismissable btn-lg" role="alert">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <span class="glyphicon glyphicon-cloud"></span>
+                <span>Do you want a build a snowman?</span>
+                <span class="glyphicon glyphicon-flash"></span>
             </div>
 
+            This alert is in its own row:
             <div class="row">
                 <div class="alert alert-danger alert-dismissable btn-lg" role="alert">
                     <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -30,28 +29,42 @@
                     <span>It doesn't have to be a snowman.</span>
                 </div>
             </div>
+        </div><!-- closes col sm 6 -->
+
+        <!-- right column alerts-->
+        <div class="col-sm-3 bgsolid">
+            This col-sm-3 has a background fill class to demonstrate that the column sizes to the content inside it. Dismiss the alert to see it shrink.
+            <div class="alert alert-info alert-dismissable btn-sm" role="alert">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <span>This alert is smaller.</span>
+            </div>
+        </div><!-- closes col sm 3 -->
     </div>
 
+    <h2>Well, that's just like your opinion, man</h2>
     <div class="row">
-        <div class="col-sm-12">
-            <h1>Dropdowns</h1>
+        <!-- selection -->
+        <div class="col-sm-8">
                <div class="btn-group">
-                   <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
-                       Favorite Disney Ride<span class="caret"></span>
-                   </button>
-                       <ul class="dropdown-menu" role="menu">
-                           <li role="presentation"><a role="menuitem">Tower of Terror</a></li>
-                           <li role="presentation"><a role="menuitem">Splash Mountain</a></li>
-                           <li role="presentation"><a role="menuitem">Star Tours</a></li>
-                           <li role="presentation"><a role="menuitem">Space Mountain</a></li>
-                           <li role="presentation"><a role="menuitem">Just kidding, Tower of Terror is the obvious choice</a></li>
-                       </ul>
+                   Best Disney ride:
+                   <select
+                           ng-model="ridesList"
+                           class="form-control"
+                           ng-options="ride for ride in rides">
+                   </select>
                </div>
+        </div>
+        <!-- display -->
+        <div class="col-sm-4">
+
+
+
         </div>
     </div>
 
+    <h3>Centered Fish Ipsum</h3>
     <div class="row">
-        <div class="col-sm-12">
+        <div class="col-sm-6 col-sm-offset-3">
             <p>
             Opaleye, slender snipe eel straptail pejerrey Pacific salmon priapumfish South American Lungfish cusk-eel handfish dhufish ocean perch lanternfish. Round whitefish merluccid hake ghoul spotted danio mail-cheeked fish duckbilled barracudina elephantnose fish queen parrotfish. Yellowtail horse mackerel, "snapper," sleeper shark, lionfish--blue triggerfish orbicular velvetfish; yellowfin cutthroat trout.
 

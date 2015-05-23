@@ -1,0 +1,17 @@
+body {
+    padding-top: 70px;
+}
+
+.bgsolid {
+    background-color:#eee;
+}
+
+@media (max-width: 768px) {
+    .btn-responsive {
+        padding: 2px 4px;
+        font-size:70%;
+        white-space:normal !important;
+        width:80%;
+        line-height:1em;
+    }
+}
