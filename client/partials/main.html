@@ -41,26 +41,112 @@
         </div><!-- closes col sm 3 -->
     </div>
 
+    <!-- form demo -->
     <h2>Well, that's just like your opinion, man</h2>
-    <div class="row">
-        <!-- selection -->
-        <div class="col-sm-8">
-               <div class="btn-group">
-                   Best Disney ride:
-                   <select
-                           ng-model="ridesList"
-                           class="form-control"
-                           ng-options="ride for ride in rides">
-                   </select>
-               </div>
-        </div>
-        <!-- display -->
-        <div class="col-sm-4">
-
-
-
-        </div>
+    <div class="col-sm-6">
+        Here's a simple form with some Angular validation.
     </div>
+    <br/><br/>
+
+    <form name="opinionsForm" novalidate>
+
+        <!-- EMAIL -->
+        <div class="col-sm-5">
+            <div class="form-group">
+                <label for="input-email">
+                    Enter a valid email address:
+                </label>
+                <input name="email"
+                       class="form-control"
+                       id="input-email"
+                       type="email"
+                       ng-model="user.email"
+                       required/>
+                <div class="alert alert-danger"
+                     ng-show="opinionsForm.email.$error.required && opinionsForm.email.$dirty"
+                     >
+                     Please enter a valid email address!
+                </div>
+                <br/>
+                <!-- <p ng-show="opinionsForm.email.$invalid && opinionsForm.email.$dirty">Email address required</p> -->
+            </div>
+
+        <!-- type 5 characters or more -->
+            <div class="form-group">
+                <label for="input-fiveIntegers">
+                    Type 5+ numbers:
+                </label>
+                <input name="charCount"
+                       ng-model="user.fiveIntegers"
+                       class="form-control"
+                       id="input-fiveIntegers"
+                       type="text"
+                       ng-minlength="5"
+                       integer-check
+                       required/>
+                <div class="alert alert-danger"
+                     ng-show="opinionsForm.fiveIntegers.$error.required && opinionsForm.fiveIntegers.$dirty"
+                        >
+                    Please enter at least 5 numbers!
+                </div>
+                <br/>
+            </div>
+        </div>
+
+        <!-- DROPDOWNS -->
+        <div class="row">
+            <div class="form-group">
+                <div class="col-sm-8">
+
+                    <!-- selection 1 -->
+                    <div class="col-sm-4 form-group">
+                        <label>Best Disney ride:</label>
+                           <select
+                                   data-ng-model="user.rideChoice1"
+                                   class="form-control"
+                                   ng-options="ride for ride in rides"
+                                   required
+                                   ride-dropdown
+                                   >
+                               <option value="">Choose a ride</option>
+                           </select>
+                    </div>
+
+                    <!-- 2nd dropdown -->
+                    <div class="col-sm-4 form-group">
+                        <label>2nd Best Disney ride:</label>
+                            <select
+                                    data-ng-model="user.rideChoice2"
+                                    class="form-control"
+                                    ng-options="ride for ride in rides"
+                                    required
+                                    ride-dropdown
+                                    >
+                                <option value="">Choose a ride</option>
+                            </select>
+                        <div class="alert alert-danger"
+                             ng-show="user.rideChoice2 && (user.rideChoice2 === user.rideChoice1)"
+                                >
+                            Yes, {{user.rideChoice1}} is awesome, but you have to pick 2 different rides.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br/>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <button
+                        class="btn btn-info pull-right"
+                        type="submit"
+                        ng-click="submitForm()"
+                        data-ng-disabled="opinionsForm.$invalid"
+                        >
+                    Submit</button>
+            </div>
+        </div>
+    </form>
 
     <h3>Centered Fish Ipsum</h3>
     <div class="row">
