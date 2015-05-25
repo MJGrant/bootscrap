@@ -76,16 +76,16 @@
                 <label for="input-fiveIntegers">
                     Type 5+ numbers:
                 </label>
-                <input name="charCount"
+                <input name="fiveIntegers"
                        ng-model="user.fiveIntegers"
+                       ng-model-options="{ updateOn: 'default blur', debounce: {'default': 1000, 'blur':0} }"
                        class="form-control"
                        id="input-fiveIntegers"
                        type="text"
-                       ng-minlength="5"
                        integer-check
                        required/>
                 <div class="alert alert-danger"
-                     ng-show="opinionsForm.fiveIntegers.$error.required && opinionsForm.fiveIntegers.$dirty"
+                     ng-show="opinionsForm.fiveIntegers.$error.integerCheck && opinionsForm.fiveIntegers.$dirty"
                         >
                     Please enter at least 5 numbers!
                 </div>
@@ -103,6 +103,7 @@
                         <label>Best Disney ride:</label>
                            <select
                                    data-ng-model="user.rideChoice1"
+                                   name="rideChoice1"
                                    class="form-control"
                                    ng-options="ride for ride in rides"
                                    required
@@ -117,6 +118,7 @@
                         <label>2nd Best Disney ride:</label>
                             <select
                                     data-ng-model="user.rideChoice2"
+                                    name="rideChoice2"
                                     class="form-control"
                                     ng-options="ride for ride in rides"
                                     required
@@ -125,7 +127,7 @@
                                 <option value="">Choose a ride</option>
                             </select>
                         <div class="alert alert-danger"
-                             ng-show="user.rideChoice2 && (user.rideChoice2 === user.rideChoice1)"
+                             ng-show="opinionsForm.rideChoice2.$error.rideDropdown && opinionsForm.rideChoice2.$dirty"
                                 >
                             Yes, {{user.rideChoice1}} is awesome, but you have to pick 2 different rides.
                         </div>
